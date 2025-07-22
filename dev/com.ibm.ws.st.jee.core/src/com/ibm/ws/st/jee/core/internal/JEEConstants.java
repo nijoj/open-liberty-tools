@@ -23,5 +23,6 @@ public interface JEEConstants {
     public FeatureResolverFeature FEATURE_CDI10 = new FeatureResolverFeature("cdi-1.0");
     public FeatureResolverFeature FEATURE_CDI12 = new FeatureResolverFeature("cdi-1.2");
     public FeatureResolverFeature FEATURE_CDI20 = new FeatureResolverFeature("cdi-2.0");
+    public FeatureResolverFeature FEATURE_CDI30 = new FeatureResolverFeature("cdi-3.0");
     public FeatureResolverFeature FEATURE_CDI = new FeatureResolverFeature("cdi");
 }

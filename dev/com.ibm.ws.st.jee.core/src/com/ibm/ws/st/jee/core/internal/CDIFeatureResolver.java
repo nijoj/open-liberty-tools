@@ -49,6 +49,7 @@ public class CDIFeatureResolver extends FeatureResolver {
     private static final String VERSION_ATTR = "version";
     private static final String BEANS1_1 = "beans_1_1.xsd";
     private static final String BEANS2_0 = "beans_2_0.xsd";
+    private static final String BEANS3_0 = "beans_3_0.xsd";
 
     private static final Set<String> folderSet = new HashSet<String>();
     private static final Map<String, FeatureResolverFeature> cdiMap = new HashMap<String, FeatureResolverFeature>();
@@ -60,6 +61,7 @@ public class CDIFeatureResolver extends FeatureResolver {
         cdiMap.put("1.0", JEEConstants.FEATURE_CDI10);
         cdiMap.put("1.1", JEEConstants.FEATURE_CDI12);
         cdiMap.put("2.0", JEEConstants.FEATURE_CDI20);
+        cdiMap.put("3.0", JEEConstants.FEATURE_CDI20);
     }
 
     @Override
@@ -174,13 +176,18 @@ public class CDIFeatureResolver extends FeatureResolver {
                                 } else if (value.endsWith(BEANS2_0)) {
                                     version = "2.0";
                                     // Don't break as should keep looking in case there is a version attribute
+                                } else if (value.endsWith(BEANS3_0)) {
+                                    version = "3.0";
+                                    // Don't break as should keep looking in case there is a version attribute
                                 }
                             }
                         }
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (
+
+        Exception e) {
             if (Trace.ENABLED)
                 Trace.trace(Trace.INFO, "Problem parsing beans.xml file: " + file.getAbsolutePath(), e);
         } finally {
